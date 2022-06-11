@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="screen">
+    <div class="screen__content">
+      <form class="login"  [formGroup]="loginForm" >
+        <img src="../assets/images/pod-1.png" style="height: 50px">
+        <h2 style="padding-left: 10px">Management System</h2>
+        <div class="login__field">
+          <i class="login__icon fas fa-user"></i>
+          <input type="text" class="login__input" placeholder="User name / Email"
+                 formControlName="username"
+                 [ngClass]="{ 'is-invalid': (submitted && f['username'].errors) || f['username'].invalid && (f['username'].dirty || f['username'].touched)}">
+          <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+            <div *ngIf="f['username'].errors?.required">Username required</div>
+          </div>
+        </div>
+        <div class="login__field">
+          <i class="login__icon fas fa-lock"></i>
+          <input type="password" class="login__input" placeholder="Password"
+                 formControlName="password"
+                 [ngClass]="{ 'is-invalid': (submitted && f['password'].errors) || f['password'].invalid && (f['password'].dirty || f['password'].touched)}">
+          <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+            <div *ngIf="f['password'].errors?.required">Password required</div>
+          </div>
+        </div>
+        <button  class="button login__submit" (click)="login()">
+          <span class="button__text" >Log In Now</span>
+          <i class="button__icon fas fa-chevron-right"></i>
+        </button>
+      </form>
+      <div class="social-login">
+        <div class="social-icons">
+          <a href="#" class="social-login__icon fab fa-instagram"></a>
+          <a href="#" class="social-login__icon fab fa-facebook"></a>
+          <a href="#" class="social-login__icon fab fa-twitter"></a>
+        </div>
+      </div>
+    </div>
+    <div class="screen__background">
+      <span class="screen__background__shape screen__background__shape4"></span>
+      <span class="screen__background__shape screen__background__shape3"></span>
+      <span class="screen__background__shape screen__background__shape2"></span>
+      <span class="screen__background__shape screen__background__shape1"></span>
+    </div>
+  </div>
+</div>

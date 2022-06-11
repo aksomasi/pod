@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pod-management';
+  header!: string;
+
+  constructor(public router: Router) {
+    router.events.subscribe((val: any) => {
+      const url = val.url;
+      switch (url) {
+        case '/pod' :
+          this.header = 'POD Details'
+          break;
+        case '/dashboard' :
+          this.header = 'Dashboard'
+          break;
+        case '/course' :
+          this.header = 'Course Details'
+          break;
+      }
+    });
+
+  }
+
+  sideBarOpen = true;
+
+  sideBarToggler() {
+    this.sideBarOpen = !this.sideBarOpen;
+  }
 }

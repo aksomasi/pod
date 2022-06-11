@@ -1,0 +1,17 @@
+<mat-nav-list>
+  <div class="logo py-4">
+    <img src="./assets/images/pod-2.png" alt="Company Logo" />
+  </div>
+  <mat-divider></mat-divider>
+  <h3 style="color: #818cf8;">POD Management System</h3>
+
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
+    <mat-icon>dashboard</mat-icon> Dashboard
+  </a>
+  <a mat-list-item routerLink="/pod" routerLinkActive="list-item-active" > <mat-icon>people</mat-icon> POD Details</a>
+  <a mat-list-item routerLink="/course" routerLinkActive="list-item-active" > <mat-icon>book</mat-icon> Course Details </a>
+
+  <mat-divider ></mat-divider>
+  <a mat-list-item (click)="logout()"> <mat-icon>logout</mat-icon> Logout </a>
+
+</mat-nav-list>
